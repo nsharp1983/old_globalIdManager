@@ -1,8 +1,0 @@
-@charset "utf-8";
-/* CSS Document */
-
-.box{ margin:50px auto; width:450px; height:235px; background-image:url(404.png); background-repeat:no-repeat; }
-.text{ padding-left:20px; width:140xp; height:;padding-top:60px; color:#666666;  font-size:12px; float:left;}
-.text h2{ color: #666666;}
-.logo{ width:160px; height:240px; float:left; cursor:pointer;}
-.box .logo img{ border:none;}

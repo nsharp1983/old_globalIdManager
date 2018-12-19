@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" build-on-make="true" name="old_empi:war">
-    <output-path>$PROJECT_DIR$/out/artifacts/old_empi_war</output-path>
-    <root id="archive" name="old_empi_war.war">
-      <element id="artifact" artifact-name="old_empi:war exploded" />
-    </root>
-  </artifact>
-</component>
