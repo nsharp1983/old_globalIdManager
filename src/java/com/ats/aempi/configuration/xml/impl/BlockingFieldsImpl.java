@@ -1,0 +1,134 @@
+package com.ats.aempi.configuration.xml.impl;
+/**
+ * An XML blocking-fields(@http://configuration.openempi.openhie.org/mpiconfig).
+ *
+ * This is a complex type.
+ */
+public class BlockingFieldsImpl extends org.apache.xmlbeans.impl.values.XmlComplexContentImpl implements com.ats.aempi.configuration.xml.BlockingFields
+{
+    
+    public BlockingFieldsImpl(org.apache.xmlbeans.SchemaType sType)
+    {
+        super(sType);
+    }
+    
+    private static final javax.xml.namespace.QName BLOCKINGFIELD$0 = 
+        new javax.xml.namespace.QName("http://configuration.openempi.openhie.org/mpiconfig", "blocking-field");
+    
+    
+    /**
+     * Gets array of all "blocking-field" elements
+     */
+    public com.ats.aempi.configuration.xml.BlockingField[] getBlockingFieldArray()
+    {
+        synchronized (monitor())
+        {
+            check_orphaned();
+            java.util.List targetList = new java.util.ArrayList();
+            get_store().find_all_element_users(BLOCKINGFIELD$0, targetList);
+            com.ats.aempi.configuration.xml.BlockingField[] result = new com.ats.aempi.configuration.xml.BlockingField[targetList.size()];
+            targetList.toArray(result);
+            return result;
+        }
+    }
+    
+    /**
+     * Gets ith "blocking-field" element
+     */
+    public com.ats.aempi.configuration.xml.BlockingField getBlockingFieldArray(int i)
+    {
+        synchronized (monitor())
+        {
+            check_orphaned();
+            com.ats.aempi.configuration.xml.BlockingField target = null;
+            target = (com.ats.aempi.configuration.xml.BlockingField)get_store().find_element_user(BLOCKINGFIELD$0, i);
+            if (target == null)
+            {
+                throw new IndexOutOfBoundsException();
+            }
+            return target;
+        }
+    }
+    
+    /**
+     * Returns number of "blocking-field" element
+     */
+    public int sizeOfBlockingFieldArray()
+    {
+        synchronized (monitor())
+        {
+            check_orphaned();
+            return get_store().count_elements(BLOCKINGFIELD$0);
+        }
+    }
+    
+    /**
+     * Sets array of all "blocking-field" element
+     */
+    public void setBlockingFieldArray(com.ats.aempi.configuration.xml.BlockingField[] blockingFieldArray)
+    {
+        synchronized (monitor())
+        {
+            check_orphaned();
+            arraySetterHelper(blockingFieldArray, BLOCKINGFIELD$0);
+        }
+    }
+    
+    /**
+     * Sets ith "blocking-field" element
+     */
+    public void setBlockingFieldArray(int i, com.ats.aempi.configuration.xml.BlockingField blockingField)
+    {
+        synchronized (monitor())
+        {
+            check_orphaned();
+            com.ats.aempi.configuration.xml.BlockingField target = null;
+            target = (com.ats.aempi.configuration.xml.BlockingField)get_store().find_element_user(BLOCKINGFIELD$0, i);
+            if (target == null)
+            {
+                throw new IndexOutOfBoundsException();
+            }
+            target.set(blockingField);
+        }
+    }
+    
+    /**
+     * Inserts and returns a new empty value (as xml) as the ith "blocking-field" element
+     */
+    public com.ats.aempi.configuration.xml.BlockingField insertNewBlockingField(int i)
+    {
+        synchronized (monitor())
+        {
+            check_orphaned();
+            com.ats.aempi.configuration.xml.BlockingField target = null;
+            target = (com.ats.aempi.configuration.xml.BlockingField)get_store().insert_element_user(BLOCKINGFIELD$0, i);
+            return target;
+        }
+    }
+    
+    /**
+     * Appends and returns a new empty value (as xml) as the last "blocking-field" element
+     */
+    public com.ats.aempi.configuration.xml.BlockingField addNewBlockingField()
+    {
+        synchronized (monitor())
+        {
+            check_orphaned();
+            com.ats.aempi.configuration.xml.BlockingField target = null;
+            target = (com.ats.aempi.configuration.xml.BlockingField)get_store().add_element_user(BLOCKINGFIELD$0);
+            return target;
+        }
+    }
+    
+    /**
+     * Removes the ith "blocking-field" element
+     */
+    public void removeBlockingField(int i)
+    {
+        synchronized (monitor())
+        {
+            check_orphaned();
+            get_store().remove_element(BLOCKINGFIELD$0, i);
+        }
+    }
+}

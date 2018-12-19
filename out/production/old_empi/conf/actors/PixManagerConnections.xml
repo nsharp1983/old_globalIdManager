@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration>
+    <StandardConnection name="apixpdq-pix-manager">
+        <HostName>localhost</HostName>
+        <Port>3600</Port>
+        <Identifier name="ReceivingApplication">
+            <NamespaceId>HL7_TEST</NamespaceId>
+        </Identifier>
+        <Identifier name="ReceivingFacility">
+            <NamespaceId>HL7_TEST</NamespaceId>
+        </Identifier>
+        
+        <Property name="test" value="true"/>
+        <Property name="pixManagerAdapter" value="com.ats.aempi.apixpdqadapter.PixManagerAdapter" />  
+	    <IncludeFile name="PixPdqClientDomains.xml" />
+    </StandardConnection> 
+    
+    <StandardConnection name="Hiup-status-change">
+        <HostName>localhost</HostName>
+        <Port>3900</Port>
+        <Identifier name="ReceivingApplication">
+            <NamespaceId>ASTATUS</NamespaceId>
+        </Identifier>
+        <Identifier name="ReceivingFacility">
+            <NamespaceId>ASTATUS</NamespaceId>
+        </Identifier>
+    </StandardConnection> 
+</Configuration>

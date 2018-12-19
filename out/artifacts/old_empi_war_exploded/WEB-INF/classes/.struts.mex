@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="default" location="178,220" size="770,805">
+    <action name="patient_*" location="65,57" size="150,41">
+      <result name="regist">
+        <resourceEdge source="regist" routing="0" target="registration.jsp" />
+      </result>
+      <result name="pixQuery">
+        <resourceEdge source="pixQuery" routing="0" target="pixquery.jsp" />
+      </result>
+      <result name="pixPatientInfo">
+        <resourceEdge source="pixPatientInfo" routing="0" target="patient.jsp" />
+      </result>
+      <result name="pdqQuery">
+        <resourceEdge source="pdqQuery" routing="0" target="pdquery.jsp" />
+      </result>
+      <result name="patientInfo">
+        <resourceEdge source="patientInfo" routing="0" target="patient.jsp" />
+      </result>
+      <result name="update">
+        <resourceEdge source="update" routing="0" target="update.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="patient.jsp" />
+      </result>
+    </action>
+    <action name="About" location="310,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="about.jsp" />
+      </result>
+    </action>
+    <action name="Config" location="65,722" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="config.jsp" />
+      </result>
+    </action>
+    <action name="pixpdqLayout" location="555,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="pixpdqLayout.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="registration.jsp" path="pages/registration.jsp" location="1012,555" size="150,55" />
+  <webResource name="pdquery.jsp" path="pages/pdquery.jsp" location="986,730" size="150,55" />
+  <webResource name="pixquery.jsp" path="pages/pixquery.jsp" location="985,905" size="150,55" />
+  <webResource name="config.jsp" path="pages/config.jsp" location="257,1080" size="150,55" />
+  <webResource name="patient.jsp" path="pages/patient.jsp" location="990,345" size="150,55" />
+  <webResource name="update.jsp" path="pages/update.jsp" location="10,450" size="150,55" />
+  <webResource name="about.jsp" path="pages/about.jsp" location="503,65" size="150,55" />
+  <webResource name="pixpdqLayout.jsp" path="pages/pixpdqLayout.jsp" location="726,65" size="150,55" />
+</Struts2Diagram>
+

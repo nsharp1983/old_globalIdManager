@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+body{ margin:0px; background-color:#FFFFFF; padding-top:2px;}
+.left{ float:left; width:260px; height:340px;; /*background-color:#e3e6ed;*/ background-color:#f6f6f6; display:block;}
+.right{ float:left; margin-left:5px; border:1px solid #CCCCCC; width:73%;}
+.l_hand{ width:100%; height:30px; background-image:url(../images/pdq_1.png); background-repeat:repeat-x; color:#FFFFFF; font-size:14px; font-weight: bold;font-family:Arial, Helvetica, sans-serif;}
+.l_hand span{ padding-left:10px; line-height:33px;}
+
+.l_s_left2{ padding-left:15px; color:#666666; font-size:14px; font-weight:bold;  width:30px; padding-top:12px; float:left;}
+.l_sr_lpage{ float:left; background-image:url(../images/pdq_seach_left.png); background-repeat:no-repeat; height:32px; width:26px;}
+.l_sr{ float:left; background-image:url(../images/pdq_seach_page.png); background-repeat: repeat-x; height:32px; width:160px;}
+.l_sr_rpage{ float:left; background-image:url(../images/pdq_seach_right.png); background-repeat:no-repeat; height:32px; width:26px;}
+.l_sr input{ width:160px; border:0; font-size:14px; margin-top:8px;}
+.l_s_ps{ padding-left:70px; font-size:12px; font-family:Arial, Helvetica, sans-serif; color:#666666;}
+.l_s_right2{height:32px; width:200px; background-image:url(../images/pdq_search2.png); background-repeat:no-repeat; display:block; padding-top:5px; background-position:5px 5px; float:left;}
+.l_s_right2:hover{background-image: url(../images/pdq_search2_a.png); background-repeat:no-repeat;}
+.l_s_right2 input{ width:150px; border:0; font-size:14px; margin-top:9px; margin-left:33px;}
+.l_s_right2 select{ width:190px; border:0; font-size:14px; margin-top:9px; margin-left:33px;}
+
+.l_s_right{height:32px; width:242px; background-image:url(../images/pdq_search1.png); background-repeat:no-repeat; display:block; padding-top:5px; background-position:20px 5px; padding-left:10px;}
+.l_s_right:hover{background-image:url(../images/pdq_search1_a.png); background-repeat:no-repeat;}
+.l_s_right input{ width:190px; border:0; font-size:14px; margin-top:9px; margin-left:40px;}
+.l_s_left{ padding-left:15px; color:#666666; font-size:14px; font-weight:bold;  width:200px; padding-top:12px;}
+
+.l_buttom{  height:33px; padding-left:10px; float:left;}
+.buttom_left{ background-image:url(../images/pdq_buttom_left.png); background-repeat:no-repeat; height:100%; width:4px; float:left}
+.buttom_right{ background-image:url(../images/pdq_buttom_right.png); background-repeat:no-repeat; height:100%; width:3px; float:left;}
+.buttom_box{color: #666666; font-size:12px; background-image:url(../images/pdq_buttom_page.png); background-repeat:repeat-x; height:100%; width:80px;text-align:center; float:left; line-height:35px; font-weight:bold;}
+.l_b_f{ float:left; width:39px; display:block; border-right:#cac7c7 solid 1px;height:33px;cursor:pointer;}
+.l_b_c{ float:left; width:40px; display:block;cursor:pointer;height:33px;}
+.l_b_f img, .l_b_c img{ padding-top:8px;}
+
+.l_b_d:hover, .l_b_s:hover, .l_b_f:hover, .l_b_c:hover{ background-image:url(../images/pdq_buttom_page_a.png); background-repeat:repeat-x; color: #000000; font-weight: bold;}
+
+
+.r_box{ width:100%;}
+.r_hand{ width:100%; height:30px; background-image:url(../images/pdq_1_right.png); background-repeat:repeat-x; color:#FFFFFF; font-size:14px; font-weight: bold;font-family:Arial, Helvetica, sans-serif;}
+.right table{ display:block;}
+
+.list1{ height:30px; width:165px; margin:0 auto;}
+.ld,.ll,.rr,.rd{ float:left; width:40px; height:100%; cursor:pointer;}
+.ld{ background-image:url(../images/pdq_page-first-disabled.gif); background-repeat:no-repeat; background-position:center;}
+.ld:hover{ background-image:url(../images/pdq_page-first.gif); background-repeat:no-repeat; background-position:center;}
+.ll{ background-image:url(../images/pdq_page-prev-disabled.gif); background-repeat:no-repeat; background-position:center;}
+.ll:hover{ background-image:url(../images/pdq_page-prev.gif); background-repeat:no-repeat; background-position:center;}
+.rr{ background-image:url(../images/pdq_page-next-disabled.gif); background-repeat:no-repeat; background-position:center;}
+.rr:hover{ background-image:url(../images/pdq_page-next.gif); background-repeat:no-repeat; background-position:center;}
+.rd{ background-image:url(../images/pdq_page-last-disabled.gif); background-repeat:no-repeat; background-position:center;}
+.rd:hover{ background-image:url(../images/pdq_page-last.gif); background-repeat:no-repeat; background-position:center;}
+
+.list2{ width:100%; height:45px; padding-top:15px;}
+.sel{ float:left; width:60px; height:50px; padding-left:50px; padding-top:6px;}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--The PIX Consumer Connections for PIX Update Notification Transaction-->
+<Configuration>
+    <!-- Cousmer 关闭 -->
+    <!-- 
+    <StandardConnection name="pixConsumer-IHE-TEST">
+        <HostName>192.168.2.4</HostName>
+        <Port>2401</Port>
+        <Identifier name="SendingApplication">
+            <NamespaceId>ATS_PIX_CONSUMER</NamespaceId>
+        </Identifier>
+        <Identifier name="SendingFacility">
+            <NamespaceId>ATS_HOSPITAL</NamespaceId>
+        </Identifier>
+        <Identifier name="ReceivingApplication">
+            <NamespaceId>ATS_PIX_SERVER</NamespaceId>
+        </Identifier>
+        <Identifier name="ReceivingFacility">
+            <NamespaceId>ATS_HOSPITAL</NamespaceId>
+        </Identifier>
+        <Property name="DoNotNotify" value="false" />
+   	    <IncludeFile name="PixPdqClientDomains.xml" />
+    </StandardConnection>
+    
+    <SecureConnection name="pixConsumer-IHE-TEST-TLS">
+        <HostName>192.168.2.163</HostName>
+        <Port>9801</Port>
+        <Identifier name="SendingApplication">
+            <NamespaceId>ATS_PIX_CONSUMER</NamespaceId>
+        </Identifier>
+        <Identifier name="SendingFacility">
+            <NamespaceId>ATS_HOSPITAL</NamespaceId>
+        </Identifier>
+        <Identifier name="ReceivingApplication">
+            <NamespaceId>ATS_PIX_SERVER_TLS</NamespaceId>
+        </Identifier>
+        <Identifier name="ReceivingFacility">
+            <NamespaceId>ATS_HOSPITAL</NamespaceId>
+        </Identifier>
+        <Property name="DoNotNotify" value="false" />
+
+
+	    <includefile name="PixPdqClientDomains.xml"/>  
+ 	
+	    <KeyStore>certs/OpenPIXPDQ_2011_Keystore.jks</KeyStore>
+	    <KeyPass>password</KeyPass>
+	    <TrustStore>certs/OpenPIXPDQ_2011_Truststore.jks</TrustStore>
+	    <TrustPass>password</TrustPass>
+    </SecureConnection>
+     -->
+
+</Configuration>
