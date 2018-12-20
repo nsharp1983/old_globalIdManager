@@ -5938,4 +5938,360 @@ BEGIN
 
 END;
 
+-- Create table
+create table PATIENT_INTERMEDIATE
+(
+  pk                       NUMBER not null,
+  patient_id               NUMBER,
+  institution_domain_id    VARCHAR2(255),
+  patient_name             VARCHAR2(255),
+  name_spell               VARCHAR2(255),
+  date_of_birth            VARCHAR2(255),
+  identity_no              VARCHAR2(64),
+  home_place               VARCHAR2(255),
+  registered_place         VARCHAR2(255),
+  native_place             VARCHAR2(255),
+  birth_place              VARCHAR2(255),
+  social_security_number   VARCHAR2(255),
+  health_card_number       VARCHAR2(255),
+  citizen_card_number      VARCHAR2(255),
+  sex_code                 VARCHAR2(64),
+  sex                      VARCHAR2(255),
+  ethnic_code              VARCHAR2(64),
+  ethnic                   VARCHAR2(255),
+  country_code             VARCHAR2(64),
+  country                  VARCHAR2(255),
+  medical_insurance_number VARCHAR2(255),
+  elder_certificate_number VARCHAR2(255),
+  medical_records_number   VARCHAR2(255),
+  language_code            VARCHAR2(64),
+  language                 VARCHAR2(255),
+  religion_code            VARCHAR2(64),
+  religion                 VARCHAR2(255),
+  marital_code             VARCHAR2(64),
+  marital                  VARCHAR2(255),
+  degree_code              VARCHAR2(64),
+  degree                   VARCHAR2(255),
+  home_phone               VARCHAR2(255),
+  home_zip_code            VARCHAR2(64),
+  registered_zip_code      VARCHAR2(64),
+  birth_zip_code           VARCHAR2(255),
+  native_zip_code          VARCHAR2(255),
+  email                    VARCHAR2(255),
+  identity                 VARCHAR2(255),
+  identity_code            VARCHAR2(64),
+  work_address             VARCHAR2(255),
+  work_phone               VARCHAR2(255),
+  relation_adress          VARCHAR2(255),
+  relation_name            VARCHAR2(255),
+  relation_phone           VARCHAR2(255),
+  relation_zip_code        VARCHAR2(255),
+  blood_type_code          VARCHAR2(64),
+  blood_type               VARCHAR2(64),
+  certificates_type_code   VARCHAR2(64),
+  certificates_number      VARCHAR2(255),
+  charge_type              VARCHAR2(255),
+  upload_time              DATE,
+  register_status          NUMBER default 0 not null,
+  registered_globalid      VARCHAR2(255),
+  original_data_xml        CLOB,
+  allergy_information      VARCHAR2(255)
+)
+tablespace ATS_EMPI
+  pctfree 10
+  initrans 1
+  maxtrans 255;
+-- Add comments to the table
+comment on table PATIENT_INTERMEDIATE
+  is '患者数据抽取和患者empi注册的中间表';
+-- Add comments to the columns
+comment on column PATIENT_INTERMEDIATE.pk
+  is '主键';
+comment on column PATIENT_INTERMEDIATE.patient_id
+  is '患者在该机构内的唯一id';
+comment on column PATIENT_INTERMEDIATE.institution_domain_id
+  is '上传机构域id';
+comment on column PATIENT_INTERMEDIATE.patient_name
+  is '患者姓名';
+comment on column PATIENT_INTERMEDIATE.name_spell
+  is '姓名拼写';
+comment on column PATIENT_INTERMEDIATE.date_of_birth
+  is '生日 yyyy-dd-mm';
+comment on column PATIENT_INTERMEDIATE.identity_no
+  is '身份证号';
+comment on column PATIENT_INTERMEDIATE.home_place
+  is '居住地/联系地（全）';
+comment on column PATIENT_INTERMEDIATE.registered_place
+  is '户口所在地(全)';
+comment on column PATIENT_INTERMEDIATE.native_place
+  is '籍贯(全)';
+comment on column PATIENT_INTERMEDIATE.birth_place
+  is '出生地(全)';
+comment on column PATIENT_INTERMEDIATE.social_security_number
+  is '社保号';
+comment on column PATIENT_INTERMEDIATE.health_card_number
+  is '健康卡号';
+comment on column PATIENT_INTERMEDIATE.citizen_card_number
+  is '市民卡号';
+comment on column PATIENT_INTERMEDIATE.sex_code
+  is '性别代码';
+comment on column PATIENT_INTERMEDIATE.sex
+  is '性别(男,女,其它)';
+comment on column PATIENT_INTERMEDIATE.ethnic_code
+  is '民族代码';
+comment on column PATIENT_INTERMEDIATE.ethnic
+  is '民族';
+comment on column PATIENT_INTERMEDIATE.country_code
+  is '国籍代码';
+comment on column PATIENT_INTERMEDIATE.country
+  is '国籍';
+comment on column PATIENT_INTERMEDIATE.medical_insurance_number
+  is '医保卡号';
+comment on column PATIENT_INTERMEDIATE.elder_certificate_number
+  is '老人卡号';
+comment on column PATIENT_INTERMEDIATE.medical_records_number
+  is '病历卡号';
+comment on column PATIENT_INTERMEDIATE.language_code
+  is '语言代码';
+comment on column PATIENT_INTERMEDIATE.language
+  is '语言';
+comment on column PATIENT_INTERMEDIATE.religion_code
+  is '宗教代码';
+comment on column PATIENT_INTERMEDIATE.religion
+  is '宗教';
+comment on column PATIENT_INTERMEDIATE.marital_code
+  is '婚姻代码';
+comment on column PATIENT_INTERMEDIATE.marital
+  is '婚姻(已婚,未婚,离异,丧偶,其它)';
+comment on column PATIENT_INTERMEDIATE.degree_code
+  is '学历代码';
+comment on column PATIENT_INTERMEDIATE.degree
+  is '学历';
+comment on column PATIENT_INTERMEDIATE.home_phone
+  is '家庭联系电话';
+comment on column PATIENT_INTERMEDIATE.home_zip_code
+  is '居住地/联系地邮编';
+comment on column PATIENT_INTERMEDIATE.registered_zip_code
+  is '户口所在地邮编';
+comment on column PATIENT_INTERMEDIATE.birth_zip_code
+  is '出生地邮编';
+comment on column PATIENT_INTERMEDIATE.native_zip_code
+  is '籍贯邮编';
+comment on column PATIENT_INTERMEDIATE.email
+  is '邮箱';
+comment on column PATIENT_INTERMEDIATE.identity
+  is '身份';
+comment on column PATIENT_INTERMEDIATE.identity_code
+  is '身份代码';
+comment on column PATIENT_INTERMEDIATE.work_address
+  is '单位地址';
+comment on column PATIENT_INTERMEDIATE.work_phone
+  is '工作联系电话';
+comment on column PATIENT_INTERMEDIATE.relation_adress
+  is '联系人地址';
+comment on column PATIENT_INTERMEDIATE.relation_name
+  is '联系人姓名';
+comment on column PATIENT_INTERMEDIATE.relation_phone
+  is '联系人电话';
+comment on column PATIENT_INTERMEDIATE.relation_zip_code
+  is '联系人邮编';
+comment on column PATIENT_INTERMEDIATE.blood_type_code
+  is '血型代码';
+comment on column PATIENT_INTERMEDIATE.blood_type
+  is '血型';
+comment on column PATIENT_INTERMEDIATE.certificates_type_code
+  is '证件代码';
+comment on column PATIENT_INTERMEDIATE.certificates_number
+  is '证件号';
+comment on column PATIENT_INTERMEDIATE.charge_type
+  is '费用类别';
+comment on column PATIENT_INTERMEDIATE.upload_time
+  is '上传时间';
+comment on column PATIENT_INTERMEDIATE.register_status
+  is '未注册0,已注册1,注册失败2';
+comment on column PATIENT_INTERMEDIATE.registered_globalid
+  is '注册成功的患者唯一id';
+comment on column PATIENT_INTERMEDIATE.original_data_xml
+  is '原始数据xml';
+comment on column PATIENT_INTERMEDIATE.allergy_information
+  is '过敏信息';
+
+
+
+
+
+-- Create table
+create table PATIENT_INFO
+(
+  pk                       NUMBER not null,
+  global_id                VARCHAR2(255),
+  patient_id               NUMBER,
+  institution_domain_id    VARCHAR2(255),
+  patient_name             VARCHAR2(255),
+  name_spell               VARCHAR2(255),
+  date_of_birth            VARCHAR2(255),
+  identity_no              VARCHAR2(64),
+  home_place               VARCHAR2(255),
+  registered_place         VARCHAR2(255),
+  native_place             VARCHAR2(255),
+  birth_place              VARCHAR2(255),
+  social_security_number   VARCHAR2(255),
+  health_card_number       VARCHAR2(255),
+  citizen_card_number      VARCHAR2(255),
+  sex_code                 VARCHAR2(64),
+  sex                      VARCHAR2(255),
+  ethnic_code              VARCHAR2(64),
+  ethnic                   VARCHAR2(255),
+  country_code             VARCHAR2(64),
+  country                  VARCHAR2(255),
+  medical_insurance_number VARCHAR2(255),
+  elder_certificate_number VARCHAR2(255),
+  medical_records_number   VARCHAR2(255),
+  language_code            VARCHAR2(64),
+  language                 VARCHAR2(255),
+  religion_code            VARCHAR2(64),
+  religion                 VARCHAR2(255),
+  marital_code             VARCHAR2(64),
+  marital                  VARCHAR2(255),
+  degree_code              VARCHAR2(64),
+  degree                   VARCHAR2(255),
+  home_phone               VARCHAR2(255),
+  home_zip_code            VARCHAR2(64),
+  registered_zip_code      VARCHAR2(64),
+  birth_zip_code           VARCHAR2(255),
+  native_zip_code          VARCHAR2(255),
+  email                    VARCHAR2(255),
+  identity                 VARCHAR2(255),
+  identity_code            VARCHAR2(64),
+  work_address             VARCHAR2(255),
+  work_phone               VARCHAR2(255),
+  relation_adress          VARCHAR2(255),
+  relation_name            VARCHAR2(255),
+  relation_phone           VARCHAR2(255),
+  relation_zip_code        VARCHAR2(255),
+  blood_type_code          VARCHAR2(64),
+  blood_type               VARCHAR2(64),
+  certificates_type_code   VARCHAR2(64),
+  certificates_number      VARCHAR2(255),
+  charge_type              VARCHAR2(255),
+  allergy_information      VARCHAR2(255),
+  register_time            DATE,
+  info_status              NUMBER default 0 not null
+)
+tablespace ATS_EMPI
+  pctfree 10
+  initrans 1
+  maxtrans 255;
+-- Add comments to the table
+comment on table PATIENT_INFO
+  is '患者信息表';
+-- Add comments to the columns
+comment on column PATIENT_INFO.pk
+  is '主键';
+comment on column PATIENT_INFO.global_id
+  is '患者唯一ID';
+comment on column PATIENT_INFO.patient_id
+  is '患者在该机构内的唯一id';
+comment on column PATIENT_INFO.institution_domain_id
+  is '上传机构域id';
+comment on column PATIENT_INFO.patient_name
+  is '患者姓名';
+comment on column PATIENT_INFO.name_spell
+  is '姓名拼写';
+comment on column PATIENT_INFO.date_of_birth
+  is '生日 yyyy-dd-mm';
+comment on column PATIENT_INFO.identity_no
+  is '身份证号';
+comment on column PATIENT_INFO.home_place
+  is '居住地/联系地（全）';
+comment on column PATIENT_INFO.registered_place
+  is '户口所在地(全)';
+comment on column PATIENT_INFO.native_place
+  is '籍贯(全)';
+comment on column PATIENT_INFO.birth_place
+  is '出生地(全)';
+comment on column PATIENT_INFO.social_security_number
+  is '社保号';
+comment on column PATIENT_INFO.health_card_number
+  is '健康卡号';
+comment on column PATIENT_INFO.citizen_card_number
+  is '市民卡号';
+comment on column PATIENT_INFO.sex_code
+  is '性别代码';
+comment on column PATIENT_INFO.sex
+  is '性别(男,女,其它)';
+comment on column PATIENT_INFO.ethnic_code
+  is '民族代码';
+comment on column PATIENT_INFO.ethnic
+  is '民族';
+comment on column PATIENT_INFO.country_code
+  is '国籍代码';
+comment on column PATIENT_INFO.country
+  is '国籍';
+comment on column PATIENT_INFO.medical_insurance_number
+  is '医保卡号';
+comment on column PATIENT_INFO.elder_certificate_number
+  is '老人卡号';
+comment on column PATIENT_INFO.medical_records_number
+  is '病历卡号';
+comment on column PATIENT_INFO.language_code
+  is '语言代码';
+comment on column PATIENT_INFO.language
+  is '语言';
+comment on column PATIENT_INFO.religion_code
+  is '宗教代码';
+comment on column PATIENT_INFO.religion
+  is '宗教';
+comment on column PATIENT_INFO.marital_code
+  is '婚姻代码';
+comment on column PATIENT_INFO.marital
+  is '婚姻(已婚,未婚,离异,丧偶,其它)';
+comment on column PATIENT_INFO.degree_code
+  is '学历代码';
+comment on column PATIENT_INFO.degree
+  is '学历';
+comment on column PATIENT_INFO.home_phone
+  is '家庭联系电话';
+comment on column PATIENT_INFO.home_zip_code
+  is '居住地/联系地邮编';
+comment on column PATIENT_INFO.registered_zip_code
+  is '户口所在地邮编';
+comment on column PATIENT_INFO.birth_zip_code
+  is '出生地邮编';
+comment on column PATIENT_INFO.native_zip_code
+  is '籍贯邮编';
+comment on column PATIENT_INFO.email
+  is '邮箱';
+comment on column PATIENT_INFO.identity
+  is '身份';
+comment on column PATIENT_INFO.identity_code
+  is '身份代码';
+comment on column PATIENT_INFO.work_address
+  is '单位地址';
+comment on column PATIENT_INFO.work_phone
+  is '工作联系电话';
+comment on column PATIENT_INFO.relation_adress
+  is '联系人地址';
+comment on column PATIENT_INFO.relation_name
+  is '联系人姓名';
+comment on column PATIENT_INFO.relation_phone
+  is '联系人电话';
+comment on column PATIENT_INFO.relation_zip_code
+  is '联系人邮编';
+comment on column PATIENT_INFO.blood_type_code
+  is '血型代码';
+comment on column PATIENT_INFO.blood_type
+  is '血型';
+comment on column PATIENT_INFO.certificates_type_code
+  is '证件代码';
+comment on column PATIENT_INFO.certificates_number
+  is '证件号';
+comment on column PATIENT_INFO.charge_type
+  is '费用类别';
+comment on column PATIENT_INFO.allergy_information
+  is '过敏信息';
+comment on column PATIENT_INFO.register_time
+  is '注册时间';
+comment on column PATIENT_INFO.info_status
+  is '正常0,作废1,异常2';
 
