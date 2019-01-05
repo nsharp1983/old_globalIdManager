@@ -230,6 +230,8 @@ public class PatientVisit extends BaseObject implements java.io.Serializable {
 	private String relevanceDomain;
 	private String relevanceName;
 
+	private Long isoutpatient;
+
 	// Constructors
 
 	/**
@@ -467,6 +469,14 @@ public class PatientVisit extends BaseObject implements java.io.Serializable {
 	}
 
 	// Property accessors
+	@Column(name = "ISOUTPATIENT",unique = true, nullable = false)
+	public Long getIsoutpatient() {
+		return isoutpatient;
+	}
+
+	public void setIsoutpatient(Long isoutpatient) {
+		this.isoutpatient = isoutpatient;
+	}
 
 	@Id
 	@Column(name = "VISIT_ID", unique = true, nullable = false)

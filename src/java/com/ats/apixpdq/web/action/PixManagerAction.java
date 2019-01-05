@@ -908,7 +908,7 @@ public class PixManagerAction  implements ServletRequestAware,ServletResponseAwa
 					
 				}
 				
-				if(patient.getPhoneNumbers().get(0)!=null)
+				if(patient.getPhoneNumbers().size()>0&&patient.getPhoneNumbers().get(0)!=null)
 				{
 					bean.setPhone(patient.getPhoneNumbers().get(0).getNumber());					
 				}				
@@ -936,7 +936,7 @@ public class PixManagerAction  implements ServletRequestAware,ServletResponseAwa
 
 				//System.out.println(patient.getAddresses());
 				
-				if (patient.getAddresses() != null) 
+				if (patient.getAddresses() .size()>0)
 				{
 					bean.setFullAddress(getAddressString(patient.getAddresses()));
 					

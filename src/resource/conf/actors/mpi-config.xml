@@ -12,8 +12,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <global-identifier>
         <assign-global-identifier>true</assign-global-identifier>
-        <namespace-identifier>GZZSYKDXFSDYYY</namespace-identifier>
-        <universal-identifier>2.16.840.1.113883.4.487.2</universal-identifier>
+        <namespace-identifier>TDY</namespace-identifier>
+        <universal-identifier>2.16.840.1.113883.4.485.5</universal-identifier>
         <universal-identifier-type>ISO</universal-identifier-type>
     </global-identifier>
     <fl:file-loader>

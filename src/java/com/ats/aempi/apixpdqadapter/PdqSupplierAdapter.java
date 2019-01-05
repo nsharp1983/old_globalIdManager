@@ -824,24 +824,24 @@ public class PdqSupplierAdapter extends BasePixPdqAdapter implements IPdSupplier
 			log.debug("符合条件的病人有" + persons.size() + "条");
 			
 			List<Person> uniquePersons = new ArrayList<Person>();
-			
+			uniquePersons.addAll(persons);
 			//根据查找到的person信息查找是否存在相关联的person病人(既可合并的),如果有合并显示
-			for (int i=0; i < persons.size(); i++) 
-			{
-	
-				Person person = Context.getPersonQueryService().loadPerson(new Long(persons.get(i).getPersonId()).intValue());
-			
-//				Person uniquePerson = findLinkedPersonInList(person, uniquePersons);
-	
-//				if (uniquePerson != null) 
-//				{
-//					addPersonIdentifiersToUniquePerson(person.getPersonIdentifiers(), uniquePerson);
-//				} 
-//				else 
-//				{
-					uniquePersons.add(person);
-//				}
-			}
+//			for (int i=0; i < persons.size(); i++)
+//			{
+//
+//				Person person = Context.getPersonQueryService().loadPerson(new Long(persons.get(i).getPersonId()).intValue());
+//
+////				Person uniquePerson = findLinkedPersonInList(person, uniquePersons);
+//
+////				if (uniquePerson != null)
+////				{
+////					addPersonIdentifiersToUniquePerson(person.getPersonIdentifiers(), uniquePerson);
+////				}
+////				else
+////				{
+//					uniquePersons.add(person);
+////				}
+//			}
             
 			log.fatal("符合条件的关联病人有" + uniquePersons.size() + "条");
 			

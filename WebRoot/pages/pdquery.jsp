@@ -219,9 +219,9 @@ var city="<s:property  escape='false' value='pm.city'/>";
 				                   <div class="see" style="text-align:left; width:45px;height: 14px; cursor: pointer; float: left;"><a title="查看" href="<%=path %>/patient_patientInfo.action?pm.atype=select&&personIndex=<s:property value="#i.getIndex()"/>">
 				                   		<img src="<%=path %>/images/clear.png" border="0" width="40px" height="14px"/></a>
 				                   	</div>
-				                   <div class="see_a" style="text-align:left;width:45px;height: 14px;cursor: pointer; float: left;"><a title="编辑" href="<%=path %>/patient_patientInfo.action?pm.atype=update&&&&personIndex=<s:property value="#i.getIndex()"/>">
-				                   		<img src="<%=path %>/images/clear.png" border="0"  width="40px" height="14px"></img></a>
-				                   	</div>	          
+				                   <%--<div class="see_a" style="text-align:left;width:45px;height: 14px;cursor: pointer; float: left;"><a title="编辑" href="<%=path %>/patient_patientInfo.action?pm.atype=update&&&&personIndex=<s:property value="#i.getIndex()"/>">--%>
+				                   		<%--<img src="<%=path %>/images/clear.png" border="0"  width="40px" height="14px"></img></a>--%>
+				                   	<%--</div>	          --%>
 				                 </div>
 							  
 						</td>

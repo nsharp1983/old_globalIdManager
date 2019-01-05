@@ -15,23 +15,43 @@ private static final long serialVersionUID = -6061320465621019356L;
     private String identityNo;
     private String dateOfBirth;
     private String genderName;
-
+    private String empi;
+    private String custom16;
 
     public PersonVo(){
 
     }
 
-    public PersonVo(NewPerson newPerson){
-this.personId=newPerson.getPersonId();
-this.name=newPerson.getName();
-this.givenName=newPerson.getGivenName();
-this.identityNo=newPerson.getIdentityNo();
-if (newPerson.getDateOfBirth()!=null){
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    public PersonVo(NewPerson newPerson) {
+        this.personId = newPerson.getPersonId();
+        this.name = newPerson.getName();
+        this.givenName = newPerson.getGivenName();
+        this.identityNo = newPerson.getIdentityNo();
+        if (newPerson.getDateOfBirth() != null) {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-    this.dateOfBirth=sdf.format(newPerson.getDateOfBirth());;
-}
-this.genderName=newPerson.getGenderName();
+            this.dateOfBirth = sdf.format(newPerson.getDateOfBirth());
+        }
+        this.genderName =newPerson.getGenderName();
+        this.empi = newPerson.getEmpi();
+        this.custom16 = newPerson.getCustom16();
+    }
+
+
+    public String getCustom16() {
+        return custom16;
+    }
+
+    public void setCustom16(String custom16) {
+        this.custom16 = custom16;
+    }
+
+    public String getEmpi() {
+        return empi;
+    }
+
+    public void setEmpi(String empi) {
+        this.empi = empi;
     }
 
     public long getPersonId() {

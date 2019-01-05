@@ -8,6 +8,7 @@ import com.ats.aempi.model.Person;
 import com.ats.aempi.model.PersonIdentifierEMPI;
 import com.ats.aempi.service.PersonManagerService;
 import com.ats.aempi.util.JsonDateValueProcessor;
+import com.ats.aempi.vo.PersonVo;
 import com.ats.aexchange.actorconfig.Configuration;
 import com.ats.aexchange.actorconfig.IActorDescription;
 import com.ats.aexchange.datamodel.*;
@@ -292,7 +293,6 @@ public class patientController {
                     if (StringUtils.isNotEmpty(addPerson.getGivenName())){
                         logger.info("更新成功！ " + pixManagerBean.getFname() + "的empi信息为"+addPerson.getEmpi());
                     }
-
                 }
 
 
@@ -315,9 +315,11 @@ public class patientController {
                 JSONObject jsonObject1=JSONObject.fromObject(resultPatientVisit,jsonConfig);
                 String patientVisitJ=jsonObject1.toString();
                 List<NewPerson> list =getPersonByParam(addPerson);
+
+
                 String personJ="";
                 if (CollectionUtils.isNotEmpty(list)){
-                    JSONObject jsonObject2=JSONObject.fromObject(list.get(0),jsonConfig);
+                    JSONObject jsonObject2=JSONObject.fromObject(new PersonVo(list.get(0)));
                     personJ=jsonObject2.toString();
                 }
 

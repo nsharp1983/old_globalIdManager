@@ -298,7 +298,11 @@ public class PersonDaoHibernate extends UniversalDaoHibernate implements PersonD
 			public Object doInHibernate(Session session) throws HibernateException, SQLException 
 			{
 				String hql=null;
-				Date birthday=personIdentifier.getPerson().getDateOfBirth();
+				Date birthday=null;
+				if (personIdentifier.getPerson()!=null){
+					birthday=personIdentifier.getPerson().getDateOfBirth();
+				}
+
 				   hql = "from Person where dateVoided is null " +
 				   		 " and custom16='" + personIdentifier.getIdentifier() + "' " +//机构内病人ID
 				   		 " and custom10='" + personIdentifier.getIdentifierDomainDict().getNamespaceIdentifier() + "' " + //域名
@@ -310,7 +314,7 @@ public class PersonDaoHibernate extends UniversalDaoHibernate implements PersonD
 						   if(birthday!=null){
 							   hql=hql+" and DATE_OF_BIRTH=?";
 						   }
-							if (StringUtils.isNotEmpty(personIdentifier.getPerson().getIdentityNo())){
+							if (personIdentifier.getPerson()!=null&&StringUtils.isNotEmpty(personIdentifier.getPerson().getIdentityNo())){
 								hql=hql+" and IDENTITY_NO='" + personIdentifier.getPerson().getIdentityNo() + "' " ;
 							}
 

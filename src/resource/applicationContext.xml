@@ -8,31 +8,31 @@
 	   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
 	   default-lazy-init="true">
 	   
-    <!--<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
-        <!--<property name="locations">-->
-            <!--<list>-->
-                <!--<value>classpath:apixpdq.properties</value>-->
-            <!--</list>-->
-        <!--</property>-->
-    <!--</bean>-->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:apixpdq.properties</value>
+            </list>
+        </property>
+    </bean>
 
 
-	<!-- 引入属性文件 -->
-	<bean class="com.ats.aempi.util.ConvertPwdPropertyConfigurer">
-		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
-		<property name="ignoreResourceNotFound" value="true" />
-		<property name="locations">
-			<list>
-				<value>classpath:apixpdq.properties</value>
-			</list>
-		</property>
-		<property name="decryptProperties">
-			<list>
-				<!-- 需要解密的配置 -->
-				<value>jdbc.password</value>
-			</list>
-		</property>
-	</bean>
+	<!-- 引入属性文件 解密 -->
+	<!--<bean class="com.ats.aempi.util.ConvertPwdPropertyConfigurer">-->
+		<!--<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />-->
+		<!--<property name="ignoreResourceNotFound" value="true" />-->
+		<!--<property name="locations">-->
+			<!--<list>-->
+				<!--<value>classpath:apixpdq.properties</value>-->
+			<!--</list>-->
+		<!--</property>-->
+		<!--<property name="decryptProperties">-->
+			<!--<list>-->
+				<!--&lt;!&ndash; 需要解密的配置 &ndash;&gt;-->
+				<!--<value>jdbc.password</value>-->
+			<!--</list>-->
+		<!--</property>-->
+	<!--</bean>-->
 
 
 	<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">

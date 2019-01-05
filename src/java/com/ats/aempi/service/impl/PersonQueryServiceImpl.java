@@ -1364,7 +1364,10 @@ public class PersonQueryServiceImpl extends BaseServiceImpl implements PersonQue
 				Criterion criterion = new Criterion();
 				criterion.setName(property);
 				criterion.setOperation(Operation.LIKE);
-				criterion.setValue(value);
+				if (property.equals("givenName"))
+					criterion.setValue("%"+value+"%");
+				else
+					criterion.setValue(value);
 				criteria.addCriterion(criterion);
 			}
 		}

@@ -1,4 +1,4 @@
-ats_empi用户下执行:
+--ats_empi用户下执行:
 create public synonym marital_status_dict for ats_dict.marital_status_dict;
 create public synonym degree_type_dict for ats_dict.degree_type_dict;
 create public synonym gender_dict for ats_dict.gender_dict;

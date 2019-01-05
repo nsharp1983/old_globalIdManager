@@ -5997,7 +5997,7 @@ create table PATIENT_INTERMEDIATE
   original_data_xml        CLOB,
   allergy_information      VARCHAR2(255)
 )
-tablespace ATS_EMPI
+tablespace users
   pctfree 10
   initrans 1
   maxtrans 255;
@@ -6178,7 +6178,7 @@ create table PATIENT_INFO
   register_time            DATE,
   info_status              NUMBER default 0 not null
 )
-tablespace ATS_EMPI
+tablespace users
   pctfree 10
   initrans 1
   maxtrans 255;

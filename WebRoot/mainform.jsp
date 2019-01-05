@@ -136,10 +136,10 @@
 				<div id="nav">
 					<ul>
 					<li class="inactive" id="regist"><a target="_self" >病人注册</a></li>
-        			<li class="inactive" id="pixquery"><a target="_self" >PIX查询</a></li>
-            		<li class="active" id="pdqquery"><a target="_self">PDQ查询</a></li>  
-            		<%--<li class="inactive" id="about"><a target="_self">关于</a></li> --%>
-            		<li class="inactive" id="exit"><a  target="_self" >退出</a></li>    
+        			<li class="inactive" id="pixquery" style="display:none"><a target="_self" >PIX查询</a></li>
+            		<li class="active" id="pdqquery"><a target="_self">病人查询</a></li>
+            		<li class="inactive" id="about" style="display:none"><a target="_self">关于</a></li>
+            		<li class="inactive" id="exit" style="display:none"><a  target="_self" >退出</a></li>
         			</ul>
 				</div>
 			</div>
