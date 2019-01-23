@@ -300,6 +300,9 @@ public class PersonManagerServiceImpl extends BaseServiceImpl implements PersonM
 
                     //增加就诊信息表的保存
                     if (patientvisit != null && person.getPersonId() > 0) {
+
+                        //20190110新增
+                        if (patientvisit.getIsoutpatient()==null) patientvisit.setIsoutpatient(100);
                         savePatientVisit(patientvisit, person);
                     }
 

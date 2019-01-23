@@ -76,10 +76,37 @@
          <UniversalId>2.16.840.1.113883.4.487.2.1.17</UniversalId>
          <UniversalIdType>ISO</UniversalIdType>
      </Identifier>
-    
-     <Identifier type="Domain" name="RIS">
-         <NamespaceId>RIS</NamespaceId>
-         <UniversalId>2.16.840.1.113883.4.487.9.1.6</UniversalId>
+
+
+
+    <!--吉大一检查-->
+     <Identifier type="Domain" name="JDYJC">
+         <NamespaceId>JDYJC</NamespaceId>
+         <UniversalId>2.16.840.1.113883.4.487.2.1.22</UniversalId>
+         <UniversalIdType>ISO</UniversalIdType>
+     </Identifier>
+    <!--吉大一检验-->
+     <Identifier type="Domain" name="JDYJY">
+         <NamespaceId>JDYJY</NamespaceId>
+         <UniversalId>2.16.840.1.113883.4.487.2.1.23</UniversalId>
+         <UniversalIdType>ISO</UniversalIdType>
+     </Identifier>
+    <!--吉大一历次病例-->
+     <Identifier type="Domain" name="JDYLCBL">
+         <NamespaceId>JDYLCBL</NamespaceId>
+         <UniversalId>2.16.840.1.113883.4.487.2.1.24</UniversalId>
+         <UniversalIdType>ISO</UniversalIdType>
+     </Identifier>
+    <!--吉大一护理-->
+     <Identifier type="Domain" name="JDYHL">
+         <NamespaceId>JDYHL</NamespaceId>
+         <UniversalId>2.16.840.1.113883.4.487.2.1.20</UniversalId>
+         <UniversalIdType>ISO</UniversalIdType>
+     </Identifier>
+    <!--吉大一医嘱-->
+     <Identifier type="Domain" name="JDYYZ">
+         <NamespaceId>JDYYZ</NamespaceId>
+         <UniversalId>2.16.840.1.113883.4.487.2.1.25</UniversalId>
          <UniversalIdType>ISO</UniversalIdType>
      </Identifier>
 </Configuration>

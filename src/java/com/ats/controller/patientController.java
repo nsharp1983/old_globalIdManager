@@ -12,11 +12,11 @@ import com.ats.aempi.vo.PersonVo;
 import com.ats.aexchange.actorconfig.Configuration;
 import com.ats.aexchange.actorconfig.IActorDescription;
 import com.ats.aexchange.datamodel.*;
-import com.ats.aexchange.utils.DateUtil;
 import com.ats.apixpdq.api.IPixManagerAdapter;
 import com.ats.apixpdq.common.PixPdqFactory;
 import com.ats.apixpdq.web.beans.PixManagerBean;
 import com.ats.apixpdq.web.servlet.PixPdqConfigurationLoader;
+import com.ats.util.DateUtil;
 import com.ats.util.PropertiesReady;
 
 import com.ats.vo.PatientVo;
@@ -184,14 +184,12 @@ public class patientController {
         if (bean.getSystemid() == null && bean.getLocalid() == null) {
             return null;
         }
-        PatientIdentifier pid ;
+        PatientIdentifier pid;
         pid = new PatientIdentifier();
 
         for (Identifier id : ids) {//病人所属机构名和机构域id
 
-                if (id.getNamespaceId().equalsIgnoreCase(bean.getSystemid())
-                ||id.getUniversalId().equals(bean.getDomainId())
-                ) {
+                if (id.getUniversalId().equals(bean.getDomainId())) {
                     pid.setAssigningAuthority(id);
                 }
 
@@ -233,16 +231,20 @@ public class patientController {
 
                 //查询患者ADT
                 PatientVisit resultPatientVisit=null;
+                Person person=new Person();
                 if (StringUtils.isNotEmpty(pixManagerBean.getVisistFlowIdAndDomain())){
-                    Person person=new Person();
                     person.setCustom6(pixManagerBean.getVisistFlowIdAndDomain());
                     person.setCustom11(pixManagerBean.getDomainId());
                     person.setCustom16(pixManagerBean.getLocalid());
                     resultPatientVisit=pixManagerAdapter.queryPatientVisit(person);
                 }
 
+                if (resultPatientVisit!=null)
+                    logger.info("查询出ADT信息的患者id为"+resultPatientVisit.getPersonId());
+                else
+                    logger.info("没有查询出ADT信息！！！");
 //只查询visit不新增visit
-                pixManagerBean.setVisistFlowIdAndDomain(null);
+//              pixManagerBean.setVisistFlowIdAndDomain(null);
 
 
 //匹配所属机构
@@ -269,8 +271,7 @@ public class patientController {
                     personIdentifierEMPI.getPerson().setName(patientName);
                     personIdentifierEMPI.getPerson().setIdentityNo(identityCard);
 
-                    DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-                    if (StringUtils.isNotEmpty(birthday))personIdentifierEMPI.getPerson().setDateOfBirth(format.parse(birthday));
+                    if (StringUtils.isNotEmpty(birthday))personIdentifierEMPI.getPerson().setDateOfBirth(DateUtil.strToDate(birthday));
                     logger.info("开始在controller中查询患者是否已存在： " + pixManagerBean.getFname());
                     oldPerson = personManagerService.findByPatientId(personIdentifierEMPI);
                 }
@@ -312,6 +313,7 @@ public class patientController {
                     }
                 });
 
+                if (resultPatientVisit==null) resultPatientVisit=pixManagerAdapter.queryPatientVisit(person);
                 JSONObject jsonObject1=JSONObject.fromObject(resultPatientVisit,jsonConfig);
                 String patientVisitJ=jsonObject1.toString();
                 List<NewPerson> list =getPersonByParam(addPerson);
